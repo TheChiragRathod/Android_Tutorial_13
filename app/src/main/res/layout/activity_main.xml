@@ -45,7 +45,7 @@
 
             <Button
                 android:id="@+id/btnCall"
-                android:layout_width="80dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="40dp"
@@ -54,7 +54,7 @@
 
             <Button
                 android:id="@+id/btnSMS"
-                android:layout_width="80dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
 
                 android:layout_alignParentRight="true"
@@ -76,7 +76,7 @@
                 android:layout_marginLeft="40dp"
                 android:text="Call Now"
                 android:textColor="@color/colorTextHidden"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -86,7 +86,7 @@
                 android:layout_marginRight="40dp"
                 android:text="Send SMS"
                 android:textColor="@color/colorTextHidden"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
         </RelativeLayout>
 
     </LinearLayout>

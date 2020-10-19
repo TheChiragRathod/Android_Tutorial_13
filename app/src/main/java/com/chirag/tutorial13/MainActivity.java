@@ -32,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnCall(View view)
     {
+        if(editTextNumber.getText().toString().isEmpty()) {
+            editTextNumber.requestFocus();
+            editTextNumber.setError("Please enter mobile number!");
+            return;
+        }
+
         if(isCallPermissionAllowed())
         {
             doCall();
@@ -40,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnMessage(View view)
     {
+        boolean result=true;
+        if(editTextMessage.getText().toString().isEmpty()) {
+            editTextMessage.requestFocus();
+            editTextMessage.setError("Please enter message!");
+            result=false;
+
+        }
+        if(editTextNumber.getText().toString().isEmpty()) {
+            editTextNumber.requestFocus();
+            editTextNumber.setError("Please enter mobile number!");
+            result=false;
+        }
+
+        if(result==false)
+            return;
         if(isSMSPermissionAllowed())
         {
             doMessage();
@@ -47,10 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void btnMessage(View view)
-    {
-
-    }
 
     private boolean isCallPermissionAllowed()
     {
