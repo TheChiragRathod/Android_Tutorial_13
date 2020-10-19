@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnMessage(View view)
     {
+        if(isSMSPermissionAllowed())
+        {
+            doMessage();
+        }
+
+    }
+
+    public void btnMessage(View view)
+    {
 
     }
 
@@ -61,6 +71,26 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+    private boolean isSMSPermissionAllowed()
+    {
+        if(Build.VERSION.SDK_INT>=23)
+        {
+            if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED)
+            {
+                return true;
+            }
+            else {
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},REQUESTCODE_SMS);
+                return false;
+            }
+        }
+        else
+        {
+            //permission is automatically granted on sdk<23 upon installation
+            return true;
+        }
+    }
     protected void doCall()
     {
         try
@@ -69,6 +99,23 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(Intent.ACTION_CALL);
             intent.setData(Uri.parse("tel:" + number));
             startActivity(intent);
+        }
+        catch (Exception objExc)
+        {
+            Toast.makeText(this, objExc.getMessage().toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    protected void doMessage()
+    {
+        try
+        {
+            String number = editTextNumber.getText().toString();
+            String Message=editTextMessage.getText().toString();
+            SmsManager smsManager=SmsManager.getDefault();
+            smsManager.sendTextMessage(number,null,Message,null,null);
+            Toast.makeText(this, "SMS Send Successfully", Toast.LENGTH_SHORT).show();
+
         }
         catch (Exception objExc)
         {
