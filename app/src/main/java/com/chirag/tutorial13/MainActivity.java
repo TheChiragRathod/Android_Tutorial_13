@@ -1,5 +1,6 @@
 package com.chirag.tutorial13;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -108,6 +109,27 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode)
+        {
+            case REQUESTCODE_CALL:
+                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
+                    doCall();
+                else
+                    Toast.makeText(this, "Permision Denied For Calls", Toast.LENGTH_SHORT).show();
+                break;
+            case REQUESTCODE_SMS:
+                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
+                    doMessage();
+                else
+                    Toast.makeText(this, "Permision Denied For SMS", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
     protected void doCall()
     {
         try

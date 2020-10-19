@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:drawableStart="@drawable/icon_call"
             android:ems="10"
             android:hint="Enter mobile number"
             android:inputType="phone"
@@ -31,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:drawableStart="@drawable/icon_sms"
             android:ems="10"
             android:hint="Enter text message"
             android:inputType="textMultiLine"
@@ -41,11 +43,12 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
 
             <Button
                 android:id="@+id/btnCall"
-                android:layout_width="60dp"
+                android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="40dp"
@@ -54,7 +57,7 @@
 
             <Button
                 android:id="@+id/btnSMS"
-                android:layout_width="60dp"
+                android:layout_width="45dp"
                 android:layout_height="wrap_content"
 
                 android:layout_alignParentRight="true"
@@ -83,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="40dp"
+                android:layout_marginRight="30dp"
                 android:text="Send SMS"
                 android:textColor="@color/colorTextHidden"
                 android:textSize="14sp" />
