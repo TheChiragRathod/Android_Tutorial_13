@@ -6,7 +6,7 @@
 
 
     <color name="colorText">#FFEB3B</color>
-
+    <color name="colorTextHidden">#97FFEB3B</color>
 
     <color name="gradientStart">#7B1FA2</color>
     <color name="gradientEnd">#078693</color>

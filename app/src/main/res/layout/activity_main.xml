@@ -5,4 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".MainActivity" />
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Enter mobile number"
+            android:inputType="phone"
+            android:textColorHint="@color/colorTextHidden" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Enter text message"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorTextHidden" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
