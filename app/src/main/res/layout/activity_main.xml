@@ -49,7 +49,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="40dp"
-                android:background="@drawable/icon_call" />
+                android:background="@drawable/icon_call"
+                android:onClick="btnCall" />
 
             <Button
                 android:id="@+id/btnSMS"
@@ -58,7 +59,8 @@
 
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="40dp"
-                android:background="@drawable/icon_send_sms" />
+                android:background="@drawable/icon_send_sms"
+                android:onClick="btnMessage" />
 
         </RelativeLayout>
 
